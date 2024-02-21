@@ -1,5 +1,5 @@
 #include "cinema.h"
 
-Cinema::Cinema(QObject *parent) : QObject(parent){
-    const
+Cinema::Cinema(QString& name, QString& address, QObject *parent) : QObject(parent), m_name(name), m_address(address) {
+
 }

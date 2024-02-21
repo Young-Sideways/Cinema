@@ -19,17 +19,22 @@ class Hall : public QObject
 
     int m_index;
 
-    QVector<QVector<QSharedPointer<Seat*>>> m_seats;
+    QVector<QVector<QSharedPointer<Seat>>> m_seats;
 
 public:
-    explicit Hall(int index, QObject *parent = nullptr);
+    explicit Hall(int index, int rows, int places, QObject *parent = nullptr);
     ~Hall() = default;
 
-    QWeakPointer<Seat*> getSeat(int row, int seat) const {
-        return QWeakPointer<Seat*>(m_seats.at(row).at(seat));
+    QWeakPointer<Seat> getSeat(int row, int place) const;
+    QVector<QWeakPointer<Seat>> getAvailable() {
+        return QVector<QWeakPointer<Seat>>();
     }
-signals:
 
+public slots:
+    void setSeat(int row, int place, Seat* seat);
+
+signals:
+    void on_seat_changed(QWeakPointer<Seat> seat);
 };
 
 #endif // HALL_H
