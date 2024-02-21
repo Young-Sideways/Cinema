@@ -16,10 +16,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    app/Cinema/cinema.cpp \
+    app/Cinema/hall.cpp \
+    app/Cinema/seat.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    app/Cinema/cinema.h \
+    app/Cinema/hall.h \
+    app/Cinema/seat.h \
     mainwindow.h
 
 FORMS += \

@@ -1,6 +1,5 @@
 #include "cinema.h"
 
-Cinema::Cinema(QObject *parent) : QObject(parent)
-{
-
+Cinema::Cinema(QObject *parent) : QObject(parent){
+    const
 }
