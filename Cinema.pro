@@ -19,6 +19,7 @@ SOURCES += \
     app/Cinema/cinema.cpp \
     app/Cinema/hall.cpp \
     app/Cinema/seat.cpp \
+    app/Film/film.cpp \
     main.cpp \
     mainwindow.cpp
 
@@ -26,6 +27,7 @@ HEADERS += \
     app/Cinema/cinema.h \
     app/Cinema/hall.h \
     app/Cinema/seat.h \
+    app/Film/film.h \
     mainwindow.h
 
 FORMS += \
