@@ -19,6 +19,8 @@ SOURCES += \
     app/Cinema/cinema.cpp \
     app/Cinema/hall.cpp \
     app/Cinema/seat.cpp \
+    app/Film/Limitation/agelimitation.cpp \
+    app/Film/Limitation/physiologicallimitation.cpp \
     app/Film/film.cpp \
     main.cpp \
     mainwindow.cpp
@@ -27,6 +29,9 @@ HEADERS += \
     app/Cinema/cinema.h \
     app/Cinema/hall.h \
     app/Cinema/seat.h \
+    app/Film/Limitation/agelimitation.h \
+    app/Film/Limitation/limitation.h \
+    app/Film/Limitation/physiologicallimitation.h \
     app/Film/film.h \
     mainwindow.h
 
