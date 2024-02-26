@@ -45,24 +45,44 @@
 <context>
     <name>Film</name>
     <message>
-        <location filename="app/Film/film.h" line="31"/>
+        <location filename="app/Film/film.cpp" line="18"/>
         <source>No limitations</source>
         <translation>Нет ограничений</translation>
     </message>
     <message>
-        <location filename="app/Film/film.h" line="36"/>
+        <location filename="app/Film/film.cpp" line="23"/>
         <source>Limitations: %1</source>
         <translation>Ограничения: %1</translation>
     </message>
     <message>
-        <location filename="app/Film/film.h" line="43"/>
+        <location filename="app/Film/film.cpp" line="31"/>
         <source>No genres</source>
         <translation>Нет жанров</translation>
     </message>
     <message>
-        <location filename="app/Film/film.h" line="48"/>
+        <location filename="app/Film/film.cpp" line="36"/>
         <source>Genres: %1</source>
         <translation>Жанры: %1</translation>
+    </message>
+    <message>
+        <location filename="app/Film/film.cpp" line="45"/>
+        <source>No producers</source>
+        <translation>Нет продюссеров</translation>
+    </message>
+    <message>
+        <location filename="app/Film/film.cpp" line="50"/>
+        <source>Producers: %1</source>
+        <translation>Продюссеры: %1</translation>
+    </message>
+    <message>
+        <location filename="app/Film/film.cpp" line="59"/>
+        <source>No actors</source>
+        <translation>Нет актёров</translation>
+    </message>
+    <message>
+        <location filename="app/Film/film.cpp" line="64"/>
+        <source>Actors: %1</source>
+        <translation>Актёры: %1</translation>
     </message>
 </context>
 <context>
