@@ -19,9 +19,16 @@ SOURCES += \
     app/Cinema/cinema.cpp \
     app/Cinema/hall.cpp \
     app/Cinema/seat.cpp \
+    app/Cinema/staff.cpp \
     app/Film/Limitation/agelimitation.cpp \
     app/Film/Limitation/physiologicallimitation.cpp \
+    app/Film/actor.cpp \
     app/Film/film.cpp \
+    app/Film/genre.cpp \
+    app/Film/producer.cpp \
+    app/ticket.cpp \
+    app/character.cpp \
+    app/session.cpp \
     main.cpp \
     mainwindow.cpp
 
@@ -29,10 +36,17 @@ HEADERS += \
     app/Cinema/cinema.h \
     app/Cinema/hall.h \
     app/Cinema/seat.h \
+    app/Cinema/staff.h \
     app/Film/Limitation/agelimitation.h \
     app/Film/Limitation/limitation.h \
     app/Film/Limitation/physiologicallimitation.h \
+    app/Film/actor.h \
     app/Film/film.h \
+    app/Film/genre.h \
+    app/Film/producer.h \
+    app/ticket.h \
+    app/character.h \
+    app/session.h \
     mainwindow.h
 
 FORMS += \
