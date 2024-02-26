@@ -24,14 +24,15 @@ public:
 
     Type getType() const;
     bool getBusy() const;
+    double getCostMultipier() const;
 
 public slots:
     void setBusy(const bool busy);
     void setType(Type type);
 
 signals:
-    void on_busy_changed(const bool busy);
-    void on_type_changed(const Type type);
+    void busyChanged(const bool busy);
+    void typeChanged(const Type type);
 };
 
 #endif // SEAT_H

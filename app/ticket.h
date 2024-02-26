@@ -7,6 +7,7 @@
 #include "Cinema/seat.h"
 #include "Cinema/staff.h"
 
+
 class Ticket : public QObject
 {
     Q_OBJECT
@@ -18,15 +19,11 @@ class Ticket : public QObject
 public:
     explicit Ticket(const Session* session = nullptr, const Seat* seat = nullptr, const Staff* staff = nullptr, QObject *parent = nullptr);
 
-    const Session* const & getSession() const {
-        return m_session;
-    }
-    const Seat* const & getSeat() const {
-        return m_seat;
-    }
-    const Staff* const & getStaff() const {
-        return m_staff;
-    }
+    const Session* const & getSession() const;
+    const Seat* const & getSeat() const;
+    const Staff* const & getStaff() const;
+    double getCost() const;
+
 signals:
 
 };

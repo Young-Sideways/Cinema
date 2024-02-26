@@ -20,36 +20,18 @@ class Film : public QObject
     QVector<Limitation*> m_limitations{};
     QVector<Genre*> m_genres{};
 
+    double m_baseCost = 0.0;
+
 public:
-    explicit Film(QString& title, QString& description, QTime timing, QVector<Limitation*>& limitations, QObject *parent = nullptr);
+    explicit Film(QString& title, QString& description, QTime timing, QVector<Limitation*>& limitations, const double baseCost = 0.0, QObject *parent = nullptr);
 
     QVector<Limitation*>& limitations() { return m_limitations; }
     QVector<Genre*>& genres() { return m_genres; }
 
-    QString limitationsStringify() {
-        if (m_limitations.empty())
-            return QString(tr("No limitations"));
+    QString limitationsStringify();
+    QString genresStringify();
 
-        return std::accumulate(
-            m_limitations.begin() + 1,
-            m_limitations.end(),
-            QString(tr("Limitations: %1").arg(m_limitations[0] ? m_limitations[0]->getName() : "")),
-            [](const QString& a, const Limitation* b) {
-                return (b ? (a + ", " + b->getName()) : "");
-            });
-    }
-    QString genresStringify() {
-        if (m_genres.empty())
-            return QString(tr("No genres"));
-
-        return std::accumulate(
-            m_genres.begin() + 1,
-            m_genres.end(),
-            QString(tr("Genres: %1").arg(m_genres[0] ? m_genres[0]->getTitle() : "")),
-            [](const QString& a, const Genre* b) {
-                return (b ? (a + ", " + b->getTitle()) : "");
-            });
-    }
+    double getBaseCost();
 };
 
 #endif // FILM_H

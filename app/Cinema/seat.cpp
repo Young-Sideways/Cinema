@@ -10,11 +10,22 @@ bool Seat::getBusy() const {
     return m_busy;
 }
 
+double Seat::getCostMultipier() const {
+    switch (m_type) {
+    case Type::Normal:
+        return 1.0;
+    case Type::VIP:
+        return 1.6;
+    default:
+        return 1.0;
+    }
+}
+
 void Seat::setType(Seat::Type type) {
     if (m_type != type)
-        emit on_type_changed(m_type = type);
+        emit typeChanged(m_type = type);
 }
 void Seat::setBusy(const bool busy) {
     if (m_busy != busy)
-        emit on_busy_changed(m_busy = busy);
+        emit busyChanged(m_busy = busy);
 }
