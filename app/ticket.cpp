@@ -1,11 +1,10 @@
 #include "ticket.h"
 
-Ticket::Ticket(const QTime time, const Session *session, const Seat *seat, const Staff *staff, QObject *parent)
+Ticket::Ticket(const Session *session, const Seat *seat, const Staff *staff, QObject *parent)
     : QObject(parent),
       m_session(session),
       m_seat(seat),
-      m_staff(staff),
-      m_startTime(time)
+      m_staff(staff)
 {
 
 }
@@ -24,8 +23,4 @@ const Staff * const &Ticket::getStaff() const {
 
 double Ticket::getCost() const {
     return m_session->getFilm()->getBaseCost() * m_seat->getCostMultipier();
-}
-
-const QTime &Ticket::getStartTime() const {
-    return m_startTime;
 }

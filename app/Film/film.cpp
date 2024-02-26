@@ -1,11 +1,13 @@
 #include "film.h"
 
-Film::Film(QString &title, QString &description, QTime timing, QVector<Limitation *> &limitations, const double baseCost, QObject *parent)
+Film::Film(QString &title, QString &description, QTime timing, QVector<Limitation *> &limitations, QVector<Producer*>& producers, QVector<Actor*>& actors, const double baseCost, QObject *parent)
     : QObject(parent),
     m_title(title),
     m_description(description),
     m_timing(timing),
     m_limitations{limitations},
+    m_producers{producers},
+    m_actors{actors},
     m_baseCost(baseCost)
 {
 
@@ -34,6 +36,34 @@ QString Film::genresStringify() {
                 QString(tr("Genres: %1").arg(m_genres[0] ? m_genres[0]->getTitle() : "")),
             [](const QString& a, const Genre* b) {
         return (b ? (a + ", " + b->getTitle()) : "");
+    });
+}
+
+QString Film::producersStringify()
+{
+    if (m_producers.empty())
+        return QString(tr("No producers"));
+
+    return std::accumulate(
+                m_producers.begin() + 1,
+                m_producers.end(),
+                QString(tr("Producers: %1").arg(m_producers[0] ? m_producers[0]->getName() : "")),
+            [](const QString& a, const Producer* b) {
+        return (b ? (a + ", " + b->getName()) : "");
+    });
+}
+
+QString Film::actorsStringify()
+{
+    if (m_actors.empty())
+        return QString(tr("No actors"));
+
+    return std::accumulate(
+                m_actors.begin() + 1,
+                m_actors.end(),
+                QString(tr("Actors: %1").arg(m_actors[0] ? m_actors[0]->getName() : "")),
+            [](const QString& a, const Actor* b) {
+        return (b ? (a + ", " + b->getName()) : "");
     });
 }
 
